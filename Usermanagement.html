@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional User Management</title>
+    <link rel="stylesheet" href="UserManagement.css">
+</head>
+<body>
+
+    <div class="user-management-container">
+        
+        <div class="header-controls">
+            <h2>User Management</h2>
+            <button class="new-user-btn" onclick="addNewRow()">
+                <span class="plus-icon">+</span> New User
+            </button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Role</th>
+                        <th>Manager</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <tr>
+                        <td data-label="User">Saurabh Mishra</td>
+                        <td data-label="Role">Manager</td>
+                        <td data-label="Manager">Sarah</td>
+                        <td data-label="Email">marc@gmail.com</td>
+                        <td data-label="Actions">
+                            <button class="action-btn send-password-btn">Send password</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="User">Honorable Ant</td>
+                        <td data-label="Role">Employee</td>
+                        <td data-label="Manager">Jane Doe</td>
+                        <td data-label="Email">ant@company.com</td>
+                        <td data-label="Actions">
+                            <button class="action-btn send-password-btn">Send password</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+    
+    <script src="UserManagement.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Expense Dashboard</title>
+    <link rel="stylesheet" href="EMPLOYEE.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="expense-dashboard-container">
+        
+        <div class="header-controls">
+            <div class="action-buttons">
+                <button class="action-btn primary"><i class="fas fa-plus"></i> New</button>
+                <button class="action-btn secondary"><i class="fas fa-upload"></i> Upload</button>
+            </div>
+            <h2>My Expense Reports</h2>
+        </div>
+
+        <div class="status-funnel">
+            <div class="funnel-step submit">
+                <span class="amount">₹ 5,467</span>
+                <span class="label">To Submit</span>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
+
+            <div class="funnel-step waiting">
+                <span class="amount">₹ 33,674</span>
+                <span class="label">Waiting Approval</span>
+            </div>
+            <i class="fas fa-chevron-right arrow"></i>
+
+            <div class="funnel-step approved">
+                <span class="amount">₹ 500</span>
+                <span class="label">Approved</span>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="expense-table">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Paid By</th>
+                        <th>Remarks</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expenseTableBody">
+                    <tr data-status="Draft">
+                        <td data-label="Employee">Sarah</td>
+                        <td data-label="Description">Restaurant bill</td>
+                        <td data-label="Date">4th Oct, 2025</td>
+                        <td data-label="Category">Food</td>
+                        <td data-label="Paid By">Sarah</td>
+                        <td data-label="Remarks">None</td>
+                        <td data-label="Amount">₹ 5,000</td>
+                        <td data-label="Status">
+                            <span class="status-tag draft">Draft</span>
+                        </td>
+                        <td data-label="Actions" class="actions-cell">
+                             <button class="table-action edit-btn"><i class="fas fa-edit"></i></button>
+                             <button class="table-action submit-btn">Submit</button>
+                        </td>
+                    </tr>
+                    <tr data-status="Submitted">
+                        <td data-label="Employee">Hard Patel</td>
+                        <td data-label="Description">Flight ticket</td>
+                        <td data-label="Date">1st Oct, 2025</td>
+                        <td data-label="Category">Travel</td>
+                        <td data-label="Paid By">Company</td>
+                        <td data-label="Remarks">Urgent trip</td>
+                        <td data-label="Amount">₹ 28,000</td>
+                        <td data-label="Status">
+                            <span class="status-tag submitted">Submitted</span>
+                        </td>
+                        <td data-label="Actions" class="actions-cell">
+                             <button class="table-action view-btn"><i class="fas fa-eye"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="Employee.js"></script>
+</body>
+</html>

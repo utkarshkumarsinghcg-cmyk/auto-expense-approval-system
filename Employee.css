@@ -1,0 +1,236 @@
+/* Variables and Base Styling */
+:root {
+    --primary-color: #007bff; /* Blue for actions */
+    --success-color: #28a745; /* Green for Approved */
+    --warning-color: #ffc107; /* Yellow for Waiting */
+    --draft-color: #6c757d; /* Gray for Draft */
+    --submitted-color: #007bff; /* Blue for Submitted */
+    --background-color: #f4f7f9;
+    --card-background: white;
+    --text-color: #343a40;
+    --border-color: #dee2e6;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--background-color);
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.expense-dashboard-container {
+    max-width: 1300px;
+    margin: 40px auto;
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Header Controls */
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.action-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+}
+
+.action-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.action-btn.primary:hover {
+    background-color: #0056b3;
+}
+
+.action-btn.secondary {
+    background-color: var(--draft-color);
+    color: white;
+}
+.action-btn.secondary:hover {
+    background-color: #5a6268;
+}
+
+
+/* Status Funnel/Summary Bar */
+.status-funnel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.funnel-step {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.funnel-step .amount {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.funnel-step .label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    text-transform: uppercase;
+}
+
+.funnel-step.submit .amount { color: var(--draft-color); }
+.funnel-step.waiting .amount { color: var(--warning-color); }
+.funnel-step.approved .amount { color: var(--success-color); }
+
+.arrow {
+    color: #ccc;
+    font-size: 0.8rem;
+    margin: 0 15px;
+}
+
+
+/* Table Styling */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.expense-table th, .expense-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap; /* Prevents long text from wrapping unnecessarily */
+}
+
+.expense-table thead th {
+    background-color: var(--light-gray);
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+.expense-table tbody tr:hover {
+    background-color: #f3f9ff;
+}
+
+/* Status Tags */
+.status-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-tag.draft {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: var(--draft-color);
+}
+.status-tag.submitted {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--submitted-color);
+}
+.status-tag.approved {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+}
+
+/* Table Actions */
+.actions-cell {
+    text-align: center;
+}
+.table-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin: 0 5px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.edit-btn { color: var(--primary-color); }
+.view-btn { color: #17a2b8; /* Info Blue */ }
+.submit-btn { 
+    background-color: var(--success-color);
+    color: white;
+    padding: 5px 10px;
+}
+.submit-btn:hover { background-color: #1e7e34; }
+
+
+/* Responsive Design (Stacking on Small Screens) */
+@media screen and (max-width: 900px) {
+    .funnel-step .amount { font-size: 1.2rem; }
+    .arrow { margin: 0 5px; }
+    
+    /* Make table rows stack for mobile visibility */
+    .expense-table, .expense-table thead, .expense-table tbody, .expense-table th, .expense-table td, .expense-table tr { 
+        display: block; 
+    }
+    
+    .expense-table thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .expense-table tr { 
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+    }
+    
+    .expense-table td { 
+        border: none;
+        border-bottom: 1px solid #f1f1f1; 
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    
+    .expense-table td:last-child {
+        border-bottom: none;
+        text-align: center;
+    }
+
+    /* Attach data-labels to the front of cells */
+    .expense-table td:before { 
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: 600;
+        text-align: left;
+        color: #555;
+    }
+}
