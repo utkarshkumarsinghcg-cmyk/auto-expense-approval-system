@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="adminview.css">
+</head>
+<body>
+    
+
+
+
+
+<div class="admin-view-container">
+    <h1>Approval Rule Setup</h1>
+    <p class="subtitle">Admin view for setting up expense approval workflows.</p>
+
+    <section class="form-section rule-details">
+        <h2>Rule Details</h2>
+        <div class="form-group">
+            <label for="rule-user">User</label>
+            <input type="text" id="rule-user" value="marc" readonly>
+        </div>
+        <div class="form-group">
+            <label for="rule-name">Rule Name</label>
+            <input type="text" id="rule-name" value="Approval rule for miscellaneous expenses">
+        </div>
+        <div class="form-group">
+            <label for="rule-description">Description about rules</label>
+            <textarea id="rule-description" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="rule-manager">Manager</label>
+            <select id="rule-manager">
+                <option value="sarah" selected>sarah</option>
+                <option value="john">John</option>
+                <option value="mitchel">Mitchel</option>
+            </select>
+            <p class="help-text">Initially the manager set on the user record should be set, admin can change manager for approval if required.</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="form-section approver-setup">
+        <h2>Approvers Sequence</h2>
+        
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="is-manager-approver">
+            <label for="is-manager-approver">Is manager an approver?</label>
+            <span class="tooltip-icon" title="If this field is checked, then by default the approver request would go to his/her manager first, before going to other approvers.">?</span>
+        </div>
+
+        <div class="approvers-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>User</th>
+                        <th>Required</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="approvers-list">
+                    <tr data-id="1">
+                        <td>1</td>
+                        <td><input type="text" value="John" placeholder="Approver Name"></td>
+                        <td><input type="checkbox" checked></td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                    <tr data-id="2">
+                        <td>2</td>
+                        <td><input type="text" value="Mitchel" placeholder="Approver Name"></td>
+                        <td><input type="checkbox"></td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                    <tr data-id="3">
+                        <td>3</td>
+                        <td><input type="text" value="Andrews" placeholder="Approver Name"></td>
+                        <td><input type="checkbox"></td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="add-approver-btn">+ Add Approver</button>
+        </div>
+
+        <div class="form-group checkbox-group sequence-logic">
+            <input type="checkbox" id="approver-sequence-enabled" checked>
+            <label for="approver-sequence-enabled">Approvers Sequence</label>
+            <p class="help-text sequence-description">
+                If this field is ticked true then the above-mentioned sequence of approvers will be followed. If unchecked, send approval requests to all approvers at the same time.
+            </p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="form-section requirements">
+        <h2>Minimum Requirements</h2>
+        <div class="form-group percentage-group">
+            <label for="min-approval-percentage">Minimum Approval Percentage</label>
+            <div class="input-with-suffix">
+                <input type="number" id="min-approval-percentage" value="75" min="0" max="100">
+                <span>%</span>
+            </div>
+            <p class="help-text">Specify the number of percentage of approvers required in order to get the request approved.</p>
+        </div>
+    </section>
+
+    <div class="form-actions">
+        <button class="primary-btn"  > <a href="./index.html">Save Rule</a></button>
+        <button class="secondary-btn">Cancel</button>
+    </div>
+</div>
+ <script src="./adminview.js"></script>
+</body>
+</html>

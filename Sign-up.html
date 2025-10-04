@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexFinance - Sign Up</title>
+  <link rel="stylesheet" href="sign.css">
+  </head>
+<body>
+
+  <div class="container">
+    <div class="logo"><img src="https://res.cloudinary.com/dbknqb3e7/image/upload/v1759559487/NexFinance_log_lorofv.jpg" alt="" style="margin-top: -3px;"><h2 class="company-name">NexFinance</h2></div><br><br>
+     <div class="Welcome"><div class="typing-text"></div> <br><br></div>
+
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Password" required />
+      <input type="password" placeholder="Confirm Password" required />
+      <div class="form-group horizontal-selects">
+    <div class="input-wrapper">
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+            <option value="">Select Country</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+            <option value="australia">Australia</option>
+        </select>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="currency">Currency</label>
+        <select id="currency" name="currency" required>
+            <option value="">Select Currency</option>
+            <option value="inr">INR</option>
+            <option value="usd">USD</option>
+            <option value="gbp">GBP</option>
+            <option value="cad">CAD</option>
+            <option value="aud">AUD</option>
+        </select>
+    </div>
+</div>
+
+      
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="extra-links">
+      Already have an account? <a href="./loogin.html">Login here</a>
+    </div>
+  </div>
+
+  <script src="signup.js"></script>
+  </body>
+</html>

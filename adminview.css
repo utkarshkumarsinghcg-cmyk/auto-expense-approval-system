@@ -1,0 +1,198 @@
+
+:root {
+    --primary-blue: #007bff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --border-color: #dee2e6;
+    --card-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-gray);
+    padding: 20px;
+}
+
+.admin-view-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+h1 { color: #343a40; font-size: 1.8rem; margin-bottom: 5px; }
+.subtitle { color: var(--medium-gray); margin-bottom: 25px; }
+
+.form-section {
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+.form-section h2 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #495057;
+    font-size: 1.3rem;
+}
+hr { border: none; border-top: 1px solid var(--border-color); margin: 30px 0; }
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #495057;
+}
+
+input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.help-text {
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+.checkbox-group label {
+    display: inline;
+    margin-right: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+
+.tooltip-icon {
+    margin-left: 5px;
+    cursor: help;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.approvers-table-wrapper {
+    margin-bottom: 20px;
+}
+.approvers-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+.approvers-table-wrapper th, .approvers-table-wrapper td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+}
+.approvers-table-wrapper th {
+    background-color: var(--light-gray);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.approvers-table-wrapper input[type="text"] {
+    border: 1px solid #ddd;
+    padding: 6px;
+    width: 95%;
+}
+.approvers-table-wrapper td:first-child { width: 5%; }
+.approvers-table-wrapper td:nth-child(3) { width: 10%; text-align: center; }
+.remove-btn {
+    background: none;
+    border: none;
+    color: #dc3545; 
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.add-approver-btn {
+    background: none;
+    border: 1px dashed var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.add-approver-btn:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.input-with-suffix {
+    display: flex;
+    align-items: center;
+    width: 150px; 
+}
+.input-with-suffix input {
+    width: 100px;
+    text-align: right;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-with-suffix span {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-left: none;
+    background-color: var(--light-gray);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+
+.form-actions {
+    margin-top: 30px;
+    text-align: right;
+}
+.primary-btn, .secondary-btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.primary-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: 1px solid var(--primary-blue);
+    margin-left: 10px;
+}
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+.secondary-btn {
+    background-color: transparent;
+    color: var(--medium-gray);
+    border: 1px solid var(--border-color);
+}
+.secondary-btn:hover {
+    background-color: #e9ecef;
+}
